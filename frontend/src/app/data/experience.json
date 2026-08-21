@@ -1,0 +1,44 @@
+[
+  {
+    "company": "Accenture",
+    "role": "Software Engineering Analyst",
+    "period": "Jun 2026 – Present",
+    "location": "Bengaluru, Karnataka, India",
+    "type": "Full-time",
+    "logo": "🟣",
+    "bullets": [
+      "Contributing to the ManageMyTeam (MMT) application by developing enhancements, resolving 20+ application defects, and implementing backend changes across multiple business workflows.",
+      "Developing and maintaining 10+ backend services using C# and .NET, supporting database operations and application integrations across core MMT functionality.",
+      "Using Git and Azure DevOps across Agile development cycles for source control, work-item tracking, defect resolution, and delivery of application changes through regular releases."
+    ],
+    "tech": ["C#", ".NET", "Azure DevOps", "Git", "SQL Server", "Agile"]
+  },
+  {
+    "company": "LTIMindtree",
+    "role": "Software Development Engineer",
+    "period": "Mar 2025 – Jun 2026",
+    "location": "Chennai, Tamil Nadu, India",
+    "type": "Full-time",
+    "logo": "🔵",
+    "bullets": [
+      "Delivered features for 2 enterprise applications — CAM360 (Client Audit Management System) and MARS (Metric Analysis & Reporting Suite) — using .NET Core, .NET Framework, AngularJS, and SQL Server.",
+      "Built and optimised 20+ API endpoints using C#, Entity Framework Core, Dapper ORM, and SQL Server, supporting data access and business workflows across CAM360 and MARS.",
+      "Engineered 10+ Angular modules and integrated REST APIs using Bootstrap, with GitHub and Postman for source control, API testing, and application development."
+    ],
+    "tech": [".NET Core", "C#", "AngularJS", "Entity Framework Core", "Dapper ORM", "SQL Server"]
+  },
+  {
+    "company": "LTIMindtree",
+    "role": "Graduate Engineer Trainee",
+    "period": "Dec 2024 – Feb 2025",
+    "location": "Mumbai, Maharashtra, India",
+    "type": "Full-time",
+    "logo": "🟢",
+    "bullets": [
+      "Implemented RESTful Web APIs using .NET Core, Entity Framework, and SQL Server, improving application efficiency by 50% across API-driven workflows.",
+      "Applied JWT-based authentication and authorisation across 10+ API endpoints, enabling role-based access control and secure user sessions.",
+      "Created 5+ Angular and TypeScript UI components with Bootstrap and integrated REST APIs to support application workflows and data operations."
+    ],
+    "tech": [".NET Core", "Entity Framework", "SQL Server", "Angular", "TypeScript", "JWT"]
+  }
+]

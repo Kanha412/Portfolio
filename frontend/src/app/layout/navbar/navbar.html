@@ -1,0 +1,45 @@
+<header [class.scrolled]="scrolled()" class="navbar">
+  <nav class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a (click)="navigate('#home')" class="logo cursor-pointer">
+      <span class="grad-text font-black text-xl tracking-tight">KG</span>
+      <span class="text-muted font-mono text-xs ml-2 hidden sm:inline">// kanha.gupta</span>
+    </a>
+
+    <!-- Desktop Links -->
+    <ul class="hidden md:flex items-center gap-6">
+      @for (link of links; track link.label) {
+        <li>
+          <button (click)="navigate(link.href)" class="nav-link">
+            {{ link.label }}
+          </button>
+        </li>
+      }
+    </ul>
+
+    <!-- CTA + Hamburger -->
+    <div class="flex items-center gap-4">
+      <button (click)="navigate('#contact')" class="cta-btn hidden md:block">
+        Let's Talk
+      </button>
+      <button (click)="toggleMenu()" class="hamburger md:hidden" [class.open]="menuOpen()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </nav>
+
+  <!-- Mobile Menu -->
+  @if (menuOpen()) {
+    <div class="mobile-menu glass">
+      @for (link of links; track link.label) {
+        <button (click)="navigate(link.href)" class="mobile-link">
+          <span class="text-primary font-mono text-sm mr-2">0{{ $index + 1 }}.</span>
+          {{ link.label }}
+        </button>
+      }
+      <button (click)="navigate('#contact')" class="cta-btn mt-4 w-full">Let's Talk</button>
+    </div>
+  }
+</header>

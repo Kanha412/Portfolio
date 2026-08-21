@@ -1,0 +1,111 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+
+  &.scrolled {
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.05);
+  }
+}
+
+.nav-link {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  position: relative;
+  padding-bottom: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, #6c63ff, #00d4ff);
+    transform: scaleX(0);
+    transition: transform 0.25s ease;
+    transform-origin: left;
+  }
+
+  &:hover {
+    color: #e2e8f0;
+    &::after { transform: scaleX(1); }
+  }
+}
+
+.cta-btn {
+  padding: 0.5rem 1.25rem;
+  border: 1px solid #6c63ff;
+  border-radius: 6px;
+  color: #6c63ff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.25s ease;
+
+  &:hover {
+    background: rgba(108,99,255,0.1);
+    box-shadow: 0 0 20px rgba(108,99,255,0.3);
+  }
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+
+  /* Hide on desktop — overrides the display:flex above so md:hidden actually wins */
+  @media (min-width: 768px) { display: none; }
+
+  span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #94a3b8;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  &.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  &.open span:nth-child(2) { opacity: 0; }
+  &.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}
+
+.mobile-menu {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  animation: slideDown 0.25s ease;
+}
+
+.mobile-link {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 1rem;
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+
+  &:hover { color: #e2e8f0; }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

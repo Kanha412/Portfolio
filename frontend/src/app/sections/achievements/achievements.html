@@ -1,0 +1,35 @@
+<section class="achievements-section">
+  <div class="max-w-5xl mx-auto px-6">
+
+    <div class="section-head" data-aos="fade-up">
+      <span class="section-tag">06. achievements</span>
+      <h2 class="section-title">Awards &amp; Recognition</h2>
+      <div class="title-line"></div>
+    </div>
+
+    <div class="ach-grid mt-16">
+      @for (item of items; track item.title; let i = $index) {
+        <div class="ach-card glass"
+             data-aos="fade-up"
+             [attr.data-aos-delay]="i * 100"
+             [style.border-left-color]="item.color">
+
+          <div class="ach-icon-wrap">
+            <span class="ach-icon">{{ item.icon }}</span>
+          </div>
+
+          <div class="ach-content">
+            <h3 class="ach-title">{{ item.title }}</h3>
+            <p class="ach-company">
+              <span class="company-name">{{ item.company }}</span>
+              &nbsp;·&nbsp;{{ item.date }}
+            </p>
+            <p class="ach-desc">{{ item.description }}</p>
+          </div>
+
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,48 @@
+.footer { background: var(--bg); }
+
+/* Back-to-top row — centered, visually separated from KanhaBot bubble */
+.back-top-row {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 1.25rem;
+}
+
+.back-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  color: var(--muted);
+  background: transparent;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  &:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: rgba(108, 99, 255, 0.06);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(108, 99, 255, 0.2);
+  }
+}
+
+.back-top-label {
+  font-size: 0.78rem;
+  font-family: 'Fira Code', monospace;
+
+  @media (max-width: 360px) { display: none; }
+}
+
+.footer-line {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(108, 99, 255, 0.4),
+    rgba(0, 212, 255, 0.4),
+    transparent
+  );
+}

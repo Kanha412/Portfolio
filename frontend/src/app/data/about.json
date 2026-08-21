@@ -1,0 +1,16 @@
+{
+  "name": "Kanha Gupta",
+  "currentRole": "Software Engineering Analyst",
+  "currentCompany": "Accenture",
+  "bio": [
+    "Hey! I'm <strong>Kanha Gupta</strong> — a Full-Stack Developer currently working as a <strong>Software Engineering Analyst at Accenture</strong>, Bengaluru. I specialise in building robust, scalable applications using <strong>.NET, C#, Angular,</strong> and <strong>SQL Server</strong>.",
+    "My journey in software development began at LNCT Group of Colleges, Bhopal, where I graduated with a B.Tech in Computer Science. Since then I've delivered enterprise features at LTIMindtree and Accenture — from RESTful APIs and EF Core-powered data layers to Angular modules and AI-powered workspaces using Gemini AI and RAG.",
+    "Outside of work I enjoy solving algorithmic problems on LeetCode and GeeksForGeeks, exploring AI/ML technologies, and building personal projects that tackle real-world problems."
+  ],
+  "facts": [
+    { "icon": "💼", "label": "Years of Experience", "value": "2+" },
+    { "icon": "🛠️", "label": "Projects Built",       "value": "10+" },
+    { "icon": "🏆", "label": "Awards Received",       "value": "2"  },
+    { "icon": "🌍", "label": "Based In",              "value": "Bengaluru, India" }
+  ]
+}

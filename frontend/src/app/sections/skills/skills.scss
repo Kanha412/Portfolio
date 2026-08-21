@@ -1,0 +1,104 @@
+.skills-section { background: var(--surface); }
+
+.section-head { text-align: center; }
+.section-tag {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  color: var(--primary);
+  letter-spacing: 0.1em;
+}
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #e2e8f0;
+  margin-top: 0.5rem;
+}
+.title-line {
+  width: 60px; height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 2px;
+  margin: 1rem auto 0;
+}
+.section-subtitle {
+  color: var(--muted);
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.groups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-group {
+  padding: 1.75rem;
+  border-radius: 16px;
+  transition: transform 0.25s, box-shadow 0.25s;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(108,99,255,0.15);
+  }
+}
+
+.group-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+}
+.group-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  flex-shrink: 0;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.03);
+  font-size: 0.8rem;
+  color: #94a3b8;
+  cursor: default;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--skill-color, var(--primary));
+    opacity: 0;
+    transition: opacity 0.2s;
+    border-radius: inherit;
+  }
+
+  &:hover {
+    color: #e2e8f0;
+    border-color: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+
+    &::before { opacity: 0.12; }
+  }
+}
+
+.skill-icon { font-size: 0.9rem; position: relative; z-index: 1; }
+.skill-name  { position: relative; z-index: 1; font-weight: 500; }

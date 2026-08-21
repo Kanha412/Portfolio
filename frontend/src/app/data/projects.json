@@ -1,0 +1,36 @@
+[
+  {
+    "_note": "Order = newest / most impressive first. Add new projects at the TOP of this array.",
+    "title": "OneNest — AI Personal Workspace",
+    "description": "A centralised personal workspace covering 7 life areas — tasks, notes, finances, documents, medicines, appointments, and personal records. Features persistent AI conversations, semantic search, and RAG-based retrieval powered by Gemini AI and PostgreSQL.",
+    "tech": [".NET", "Angular", "PostgreSQL", "JWT", "Gemini AI", "RAG"],
+    "category": "AI",
+    "github": "https://github.com/Kanha412/OneNest-AI",
+    "live": "https://onenest-web.onrender.com",
+    "featured": true,
+    "gradient": "linear-gradient(135deg, #6c63ff, #00d4ff)",
+    "emoji": "🏠"
+  },
+  {
+    "title": "LandMaster — Real Estate Platform",
+    "description": "Full-stack real estate platform enabling admins to post land requirements and users to submit property listings, streamlining workflows with 40% faster approval cycles. Secured with JWT authentication and robust SQL-based data management.",
+    "tech": ["ASP.NET Core", "C#", "AngularJS", "SQL Server", "JWT"],
+    "category": "Web",
+    "github": "https://github.com/Kanha412/LandMaster",
+    "live": "",
+    "featured": true,
+    "gradient": "linear-gradient(135deg, #ec4899, #f97316)",
+    "emoji": "🏡"
+  },
+  {
+    "title": "T20I Cricket Score Predictor",
+    "description": "Machine learning model trained on 64,000+ T20I match records using 6 match-state features, achieving an R² score of 0.98 and 95% prediction accuracy. Optimised data preprocessing improved accuracy by 15%, deployed live via Streamlit.",
+    "tech": ["Python", "Machine Learning", "Streamlit", "Google Colab"],
+    "category": "ML",
+    "github": "https://github.com/Kanha412/T20I_Cricket_Score_Predictor",
+    "live": "https://colab.research.google.com/github/Kanha412/T20I_Cricket_Score_Predictor/blob/main/T20I_Cricket_Score_Predictor.ipynb",
+    "featured": true,
+    "gradient": "linear-gradient(135deg, #10b981, #06b6d4)",
+    "emoji": "🏏"
+  }
+]

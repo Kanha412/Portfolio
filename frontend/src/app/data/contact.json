@@ -1,0 +1,40 @@
+{
+  "tagline": "Have a project in mind or just want to connect? I'd love to hear from you.",
+  "socials": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/Kanha412",
+      "icon": "github",
+      "color": "#ffffff",
+      "handle": "@Kanha412"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/in/kanhagupta412",
+      "icon": "linkedin",
+      "color": "#0a66c2",
+      "handle": "kanhagupta412"
+    },
+    {
+      "label": "LeetCode",
+      "url": "https://leetcode.com/u/kanhagupta412",
+      "icon": "leetcode",
+      "color": "#ffa116",
+      "handle": "kanhagupta412"
+    },
+    {
+      "label": "GeeksForGeeks",
+      "url": "https://www.geeksforgeeks.org/user/kanhagupta412",
+      "icon": "gfg",
+      "color": "#2f8d46",
+      "handle": "@kanhagupta412"
+    },
+    {
+      "label": "HackerRank",
+      "url": "https://www.hackerrank.com/profile/kanhagupta412",
+      "icon": "hackerrank",
+      "color": "#2ec866",
+      "handle": "@kanhagupta412"
+    }
+  ]
+}

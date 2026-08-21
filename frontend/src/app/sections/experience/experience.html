@@ -1,0 +1,60 @@
+<section class="experience-section">
+  <div class="max-w-5xl mx-auto px-6">
+
+    <div class="section-head" data-aos="fade-up">
+      <span class="section-tag">04. experience</span>
+      <h2 class="section-title">Where I've Worked</h2>
+      <div class="title-line"></div>
+    </div>
+
+    <div class="timeline mt-16">
+      @for (job of jobs; track job.company; let i = $index) {
+        <div class="timeline-item" [class.right]="i % 2 === 1"
+             data-aos="fade-up" [attr.data-aos-delay]="i * 150">
+
+          <!-- Node -->
+          <div class="timeline-node">
+            <span class="node-logo">{{ job.logo }}</span>
+          </div>
+
+          <!-- Card -->
+          <div class="timeline-card glass">
+            <div class="card-header">
+              <div>
+                <h3 class="job-role">{{ job.role }}</h3>
+                <p class="job-company">
+                  <span class="text-secondary font-semibold">{{ job.company }}</span>
+                  &nbsp;·&nbsp;{{ job.type }}
+                </p>
+              </div>
+              <div class="job-meta">
+                <span class="meta-chip">📅 {{ job.period }}</span>
+                <span class="meta-chip">📍 {{ job.location }}</span>
+              </div>
+            </div>
+
+            <ul class="bullet-list">
+              @for (b of job.bullets; track b) {
+                <li class="bullet-item">
+                  <span class="bullet-dot"></span>
+                  {{ b }}
+                </li>
+              }
+            </ul>
+
+            <div class="tech-row">
+              @for (t of job.tech; track t) {
+                <span class="tech-chip">{{ t }}</span>
+              }
+            </div>
+          </div>
+
+        </div>
+      }
+
+      <!-- Timeline line -->
+      <div class="timeline-line"></div>
+    </div>
+
+  </div>
+</section>

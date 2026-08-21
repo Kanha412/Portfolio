@@ -1,0 +1,33 @@
+<section class="skills-section">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="section-head" data-aos="fade-up">
+      <span class="section-tag">03. skills</span>
+      <h2 class="section-title">Tech Stack</h2>
+      <div class="title-line"></div>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        Tools and technologies I work with on a daily basis
+      </p>
+    </div>
+
+    <div class="groups-grid mt-14">
+      @for (group of groups; track group.category; let i = $index) {
+        <div class="skill-group glass" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+          <h3 class="group-title">
+            <span class="group-dot"></span>
+            {{ group.category }}
+          </h3>
+          <div class="skill-tags">
+            @for (skill of group.skills; track skill.name) {
+              <div class="skill-tag" [style.--skill-color]="skill.color">
+                <span class="skill-icon">{{ skill.icon }}</span>
+                <span class="skill-name">{{ skill.name }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

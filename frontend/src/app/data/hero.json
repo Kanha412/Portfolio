@@ -1,0 +1,35 @@
+{
+  "name": "Kanha Gupta",
+  "titles": [
+    "Full-Stack Developer",
+    ".NET & Angular Engineer",
+    "AI Enthusiast",
+    "Problem Solver"
+  ],
+  "description": "I build <strong>scalable</strong>, full-stack applications — from clean .NET &amp; C# APIs to Angular UIs and AI-powered features using Gemini AI.",
+  "ctaPrimary": {
+    "label": "View My Work",
+    "target": "#projects"
+  },
+  "ctaSecondary": {
+    "label": "Contact Me",
+    "target": "#contact"
+  },
+  "socials": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/Kanha412",
+      "icon": "github"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/in/kanhagupta412",
+      "icon": "linkedin"
+    },
+    {
+      "label": "LeetCode",
+      "url": "https://leetcode.com/u/kanhagupta412",
+      "icon": "leetcode"
+    }
+  ]
+}

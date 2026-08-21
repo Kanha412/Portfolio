@@ -1,0 +1,87 @@
+<!-- Floating Bubble -->
+<button class="chat-bubble" (click)="toggle()" [class.open]="isOpen()" title="Chat with KG AI">
+  @if (!isOpen()) {
+    <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+      <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.546 20.8a.75.75 0 00.916.99l3.96-1.376A9.978 9.978 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+    </svg>
+    <span class="bubble-label">Ask KG AI</span>
+  } @else {
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+    </svg>
+  }
+  <span class="online-dot"></span>
+</button>
+
+<!-- Chat Panel -->
+@if (isOpen()) {
+  <div class="chat-panel glass">
+
+    <!-- Header -->
+    <div class="chat-header">
+      <div class="bot-avatar">🤖</div>
+      <div class="bot-info">
+        <span class="bot-name grad-text">KG AI</span>
+        <span class="bot-status">
+          <span class="status-dot"></span> Online — Ask me anything!
+        </span>
+      </div>
+      <button (click)="toggle()" class="close-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="w-4 h-4">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Messages -->
+    <div class="messages" #msgContainer>
+      @for (msg of messages(); track $index) {
+        <div class="msg-row" [class.user]="msg.role === 'user'">
+          @if (msg.role === 'bot') {
+            <div class="msg-avatar">🤖</div>
+          }
+          <div class="msg-bubble" [class.bot-bubble]="msg.role === 'bot'" [class.user-bubble]="msg.role === 'user'">
+            <p [innerHTML]="formatText(msg.text)"></p>
+            <span class="msg-time">{{ msg.time }}</span>
+          </div>
+        </div>
+      }
+
+      @if (isTyping()) {
+        <div class="msg-row">
+          <div class="msg-avatar">🤖</div>
+          <div class="msg-bubble bot-bubble typing-indicator">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Suggestions -->
+    @if (messages().length <= 1) {
+      <div class="suggestions">
+        @for (s of suggestions; track s) {
+          <button class="suggestion-btn" (click)="send(s)">{{ s }}</button>
+        }
+      </div>
+    }
+
+    <!-- Input -->
+    <div class="chat-input-row">
+      <input
+        class="chat-input"
+        type="text"
+        placeholder="Ask about Kanha..."
+        [(ngModel)]="input"
+        (keydown)="onEnter($event)"
+        maxlength="200"
+      />
+      <button class="send-btn" (click)="send()" [disabled]="!input.trim()">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+          <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+}

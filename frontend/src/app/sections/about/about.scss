@@ -1,0 +1,91 @@
+.about-section { background: var(--bg); }
+
+/* Section Header shared styles */
+.section-head { text-align: center; margin-bottom: 0; }
+.section-tag {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  color: var(--primary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #e2e8f0;
+  margin-top: 0.5rem;
+}
+.title-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 2px;
+  margin: 1rem auto 0;
+}
+
+/* Avatar */
+.avatar-side { display: flex; justify-content: center; }
+.avatar-wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avatar-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(108,99,255,0.2), transparent 70%);
+  border-radius: 50%;
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+.avatar-frame {
+  width: 220px;
+  height: 220px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(108,99,255,0.3);
+  position: relative;
+  z-index: 1;
+  animation: float 6s ease-in-out infinite;
+}
+.avatar-initials {
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: -4px;
+}
+.dot-grid {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  background-image: radial-gradient(rgba(108,99,255,0.4) 1px, transparent 1px);
+  background-size: 12px 12px;
+  z-index: 0;
+}
+
+/* Fact cards */
+.fact-card {
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: default;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(108,99,255,0.2);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.05); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}

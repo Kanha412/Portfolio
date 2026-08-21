@@ -1,0 +1,57 @@
+{
+  "botName": "KG AI",
+  "greeting": "Hi! I'm **KG AI** 👋 — Kanha's AI assistant. Ask me anything about him: skills, projects, experience, or just say hello!",
+  "suggestions": [
+    "What are your skills?",
+    "Tell me about your experience",
+    "What projects have you built?",
+    "Where did you study?"
+  ],
+  "fallback": "Hmm, I'm not sure about that one! 🤔 Kanha hasn't briefed me on that yet. Try asking about his **skills**, **projects**, **experience**, or **education**!",
+  "knowledgeBase": [
+    {
+      "pattern": "skill|tech|stack|know|language|framework|expert",
+      "response": "Kanha's core stack is **C#, .NET / ASP.NET Core, Angular, TypeScript,** and **SQL Server**. He's also proficient in Python, PostgreSQL, Entity Framework Core, Dapper ORM, REST APIs, and has hands-on AI experience with **Gemini AI** and **RAG**. On the frontend, he works with React.js, Tailwind CSS, and Bootstrap too! 🚀"
+    },
+    {
+      "pattern": "experience|work|job|career|accenture|ltimindtree|lti",
+      "response": "Kanha has 2+ years of professional experience:\n\n**Accenture** (Jun 2026 – Present) — Software Engineering Analyst, Bengaluru, building backend .NET services for the ManageMyTeam (MMT) app.\n\n**LTIMindtree** (Dec 2024 – Jun 2026) — worked as Graduate Engineer Trainee then Software Development Engineer, delivering 20+ API endpoints and 10+ Angular modules for CAM360 and MARS enterprise apps. 💼"
+    },
+    {
+      "pattern": "project|built|created|onenest|landmaster|cricket|t20",
+      "response": "Kanha's key projects:\n\n🏠 **OneNest** — AI-powered personal workspace (.NET, Angular, PostgreSQL, Gemini AI, RAG) covering 7 life areas with semantic search.\n\n🏡 **LandMaster** — Real estate platform (ASP.NET Core, C#, AngularJS, SQL Server, JWT) with 40% faster approval cycles.\n\n🏏 **T20I Cricket Score Predictor** — ML model on 64k+ match records, R² of 0.98, 95% prediction accuracy (Python, Streamlit). Check the Projects section above! 🛠️"
+    },
+    {
+      "pattern": "contact|reach|hire|available|connect",
+      "response": "You can reach Kanha through the **Contact section** on this page, or connect via **LinkedIn** (linkedin.com/in/kanha-gupta) or **GitHub** (github.com/kanha-gupta). Always happy to chat! 📬"
+    },
+    {
+      "pattern": "github|linkedin|leetcode|gfg|geeksforgeeks|hackerrank|social|profile|coding",
+      "response": "Here are Kanha's profiles:\n- **GitHub:** github.com/kanha-gupta\n- **LinkedIn:** linkedin.com/in/kanha-gupta\n- **LeetCode:** leetcode.com/u/kanha-gupta\n- **GeeksForGeeks:** geeksforgeeks.org/user/kanha-gupta\n- **HackerRank:** hackerrank.com/profile/kanha-gupta\n\nGo say hi! 🙌"
+    },
+    {
+      "pattern": "education|study|college|university|degree|lnct|bhopal|b.tech|btech",
+      "response": "Kanha holds a **B.Tech in Computer Science and Engineering** from **LNCT Group of Colleges, Bhopal** (Aug 2020 – May 2024), graduating with a **CGPA of 8.02/10**. During college he also achieved Top 10 among 50+ teams in the CODEBITE 2k23 State-Level Web Hackathon! 🎓"
+    },
+    {
+      "pattern": "award|achievement|recognition|prize|hackathon|chess|spot award",
+      "response": "Kanha has earned some great recognitions:\n\n🏆 **Hi-five Spot Award** — LTIMindtree (Feb 2026) for project delivery & issue resolution.\n⭐ **Super Crew Spot Award** — LTIMindtree (Aug 2025) for consistent client deliverables.\n🥇 **Web Wizard Top 10** — CODEBITE 2k23 Hackathon among 50+ teams.\n♟️ **1st Prize** — JSSC Chess Tournament (Jan 2020) among 30+ participants."
+    },
+    {
+      "pattern": "interest|hobby|like|love|passion|fun|chess",
+      "response": "Outside of coding, Kanha loves **competitive programming** (LeetCode & GeeksForGeeks 💪), exploring AI/ML technologies, and building personal projects. He's also a chess champion — won 1st prize at the JSSC Chess Tournament! ♟️"
+    },
+    {
+      "pattern": "age|old|born",
+      "response": "Kanha hasn't shared that publicly just yet 😄 But he's young, energetic, and shipping cool things every day!"
+    },
+    {
+      "pattern": "hello|hi|hey|greet|morning|evening|howdy",
+      "response": "Hey there! 👋 Great to meet you! I'm KG AI — here to tell you everything about Kanha Gupta. What would you like to know?"
+    },
+    {
+      "pattern": "who|about|introduce|yourself|kanha",
+      "response": "Kanha Gupta is a **Full-Stack Developer & AI enthusiast** based in Bengaluru, currently working as a **Software Engineering Analyst at Accenture**. He specialises in .NET, C#, Angular, and has built AI-powered apps using Gemini AI and RAG. This portfolio is his work! ✨"
+    }
+  ]
+}

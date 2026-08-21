@@ -1,0 +1,34 @@
+[
+  {
+    "icon": "🏆",
+    "title": "Hi-five Spot Award",
+    "company": "LTIMindtree",
+    "date": "February 2026",
+    "description": "Recognised for outstanding contributions to project delivery, issue resolution, and assigned development tasks.",
+    "color": "#ffa116"
+  },
+  {
+    "icon": "⭐",
+    "title": "Super Crew Spot Award",
+    "company": "LTIMindtree",
+    "date": "August 2025",
+    "description": "Awarded for consistent contribution to project deliverables and meeting client requirements.",
+    "color": "#6c63ff"
+  },
+  {
+    "icon": "🥇",
+    "title": "Web Wizard — Top 10",
+    "company": "CODEBITE 2k23 Hackathon",
+    "date": "February 2023",
+    "description": "Achieved top 10 position among 50+ teams in the state-level Web Development Hackathon by Sheryians Coding School at SIRT College, Bhopal.",
+    "color": "#10b981"
+  },
+  {
+    "icon": "♟️",
+    "title": "JSSC Chess Champion",
+    "company": "JSSC Chess Tournament",
+    "date": "January 2020",
+    "description": "Won 1st prize in the JSSC Chess Tournament, securing the championship among 30+ participants.",
+    "color": "#00d4ff"
+  }
+]

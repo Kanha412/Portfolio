@@ -1,0 +1,41 @@
+<section class="education-section">
+  <div class="max-w-5xl mx-auto px-6">
+
+    <div class="section-head" data-aos="fade-up">
+      <span class="section-tag">02. education</span>
+      <h2 class="section-title">Academic Background</h2>
+      <div class="title-line"></div>
+    </div>
+
+    <div class="edu-grid mt-16">
+      @for (entry of entries; track entry.institution; let i = $index) {
+        <div class="edu-card glass" data-aos="fade-up" [attr.data-aos-delay]="i * 150">
+
+          <div class="edu-header">
+            <div class="edu-logo">{{ entry.logo }}</div>
+            <div class="edu-meta">
+              <h3 class="edu-institution">{{ entry.institution }}</h3>
+              <p class="edu-degree">{{ entry.degree }}</p>
+              <div class="edu-chips">
+                <span class="meta-chip">📅 {{ entry.period }}</span>
+                <span class="meta-chip">📍 {{ entry.location }}</span>
+                <span class="meta-chip cgpa-chip">🎯 CGPA: {{ entry.cgpa }}</span>
+              </div>
+            </div>
+          </div>
+
+          <ul class="edu-highlights">
+            @for (h of entry.highlights; track h) {
+              <li class="highlight-item">
+                <span class="bullet-dot"></span>
+                {{ h }}
+              </li>
+            }
+          </ul>
+
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

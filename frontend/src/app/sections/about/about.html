@@ -1,0 +1,48 @@
+<section class="about-section">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="section-head" data-aos="fade-up">
+      <span class="section-tag">01. about me</span>
+      <h2 class="section-title">Who I Am</h2>
+      <div class="title-line"></div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-16 items-center mt-16">
+
+      <!-- Avatar -->
+      <div class="avatar-side" data-aos="fade-right" data-aos-delay="100">
+        <div class="avatar-wrapper">
+          <div class="avatar-glow"></div>
+          <div class="avatar-frame glass">
+            <div class="avatar-initials grad-text">KG</div>
+          </div>
+          <div class="dot-grid"></div>
+        </div>
+      </div>
+
+      <!-- Bio text — rendered from about.json bio array -->
+      <div data-aos="fade-left" data-aos-delay="200">
+        @for (para of data.bio; track $index) {
+          <p class="text-base leading-relaxed mb-5"
+             [class.text-lg]="$index === 0"
+             [class.text-slate-300]="$index === 0"
+             [class.text-muted]="$index > 0"
+             [innerHTML]="para">
+          </p>
+        }
+
+        <!-- Fact Cards — from about.json facts array -->
+        <div class="grid grid-cols-2 gap-4 mt-4">
+          @for (fact of data.facts; track fact.label) {
+            <div class="fact-card glass" data-aos="zoom-in" [attr.data-aos-delay]="100 * $index">
+              <span class="text-2xl mb-1 block">{{ fact.icon }}</span>
+              <span class="text-xl font-bold grad-text">{{ fact.value }}</span>
+              <span class="text-xs text-muted block mt-0.5">{{ fact.label }}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
