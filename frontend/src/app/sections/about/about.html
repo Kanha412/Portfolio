@@ -14,7 +14,17 @@
         <div class="avatar-wrapper">
           <div class="avatar-glow"></div>
           <div class="avatar-frame glass">
-            <div class="avatar-initials grad-text">KG</div>
+            <!-- Real photo: drop avatar.jpg in frontend/public/ to activate -->
+            <img
+              [src]="avatarSrc"
+              alt="Kanha Gupta"
+              class="avatar-photo"
+              [class.hidden]="!avatarLoaded"
+              (load)="onAvatarLoad()"
+              (error)="onAvatarError()"
+            />
+            <!-- Fallback initials shown when no photo is present -->
+            <div class="avatar-initials grad-text" [class.hidden]="avatarLoaded">KG</div>
           </div>
           <div class="dot-grid"></div>
         </div>
