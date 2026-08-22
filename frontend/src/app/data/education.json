@@ -5,12 +5,26 @@
       "location": "Bhopal, Madhya Pradesh",
       "degree": "B.Tech in Computer Science and Engineering",
       "period": "Aug 2020 – May 2024",
-      "cgpa": "8.02 / 10",
+      "cgpa": "8.0 / 10",
       "logo": "🎓",
       "highlights": [
         "Graduated with CGPA of 8.02/10 in Computer Science and Engineering.",
         "Achieved top 10 position among 50+ teams in CODEBITE 2k23 — a state-level Web Development Hackathon by Sheryians Coding School.",
         "Core coursework: Data Structures & Algorithms, Operating Systems, DBMS, Computer Networks, OOP, and Software Engineering."
+      ]
+    },
+
+    {
+      "institution": "Saint Paul's Sr. Sec. School",
+      "location": "Katni, Madhya Pradesh",
+      "degree": "Class XII — Maths & Science (PCM)",
+      "period": "Apr 2019- May 2020",
+      "cgpa": "8.5 / 10",
+      "logo": "🎓",
+      "highlights": [
+        "Scored 85% in Class XII Board with Physics, Chemistry & Mathematics (PCM) stream.",
+        "🏆 1st Prize — JSSC Chess Tournament among 30+ institutes (Jan 2020).",
+        "Active in school Chess, Football and Cricket teams."
       ]
     }
   ]

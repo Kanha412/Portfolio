@@ -30,8 +30,8 @@
       "response": "Here are Kanha's profiles:\n- **GitHub:** github.com/kanha-gupta\n- **LinkedIn:** linkedin.com/in/kanha-gupta\n- **LeetCode:** leetcode.com/u/kanha-gupta\n- **GeeksForGeeks:** geeksforgeeks.org/user/kanha-gupta\n- **HackerRank:** hackerrank.com/profile/kanha-gupta\n\nGo say hi! 🙌"
     },
     {
-      "pattern": "education|study|college|university|degree|lnct|bhopal|b.tech|btech",
-      "response": "Kanha holds a **B.Tech in Computer Science and Engineering** from **LNCT Group of Colleges, Bhopal** (Aug 2020 – May 2024), graduating with a **CGPA of 8.02/10**. During college he also achieved Top 10 among 50+ teams in the CODEBITE 2k23 State-Level Web Hackathon! 🎓"
+      "pattern": "education|study|college|university|degree|lnct|bhopal|b.tech|btech|school|12th|pcm|science|maths",
+      "response": "Kanha's academic journey:\n\n🎓 **B.Tech — Computer Science & Engineering**\nLNCT Group of Colleges, Bhopal | Aug 2020 – May 2024 | CGPA: 8.02/10\n• Top 10 among 50+ teams — CODEBITE 2k23 State-Level Web Hackathon\n\n📚 **Class XII — Saint Paul's Sr. Sec. School — Maths & Science (PCM)**\nKatni | 2019 – 2020 | 85%+\n• 🏆 1st Prize — JSSC Chess Tournament\n• Active in school Football & Cricket teams"
     },
     {
       "pattern": "award|achievement|recognition|prize|hackathon|chess|spot award",
