@@ -35,6 +35,9 @@ export class ChatbotComponent implements AfterViewChecked {
   // Full conversation history for Gemini multi-turn context
   private history: GeminiContent[] = [];
 
+  // Track message count so we only smooth-scroll when a new message arrives
+  private lastMsgCount = 0;
+
   get suggestions() { return this.bot.suggestions; }
 
   toggle(): void { this.isOpen.update(v => !v); }
@@ -61,6 +64,15 @@ export class ChatbotComponent implements AfterViewChecked {
 
   onEnter(e: KeyboardEvent): void {
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); this.send(); }
+  }
+
+  /** Intercept every wheel event on the panel — route it to the messages
+   *  container and stop it from reaching the main page scroll. */
+  onPanelWheel(event: WheelEvent): void {
+    const el = this.msgContainer?.nativeElement;
+    if (!el) return;
+    event.preventDefault();
+    el.scrollTop += event.deltaY;
   }
 
   // ── Gemini 3.6 Flash — REST API call ─────────────────────────────────────
@@ -115,9 +127,11 @@ export class ChatbotComponent implements AfterViewChecked {
   }
 
   ngAfterViewChecked(): void {
-    if (this.msgContainer) {
+    const count = this.messages().length;
+    if (this.msgContainer && count !== this.lastMsgCount) {
+      this.lastMsgCount = count;
       const el = this.msgContainer.nativeElement;
-      el.scrollTop = el.scrollHeight;
+      el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' });
     }
   }
 

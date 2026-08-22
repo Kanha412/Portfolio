@@ -15,7 +15,7 @@
 
 <!-- Chat Panel -->
 @if (isOpen()) {
-  <div class="chat-panel glass">
+  <div class="chat-panel glass" (wheel)="onPanelWheel($event)">
 
     <!-- Header -->
     <div class="chat-header">
