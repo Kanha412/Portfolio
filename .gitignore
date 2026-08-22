@@ -22,3 +22,6 @@ Thumbs.db
 
 # Build artefacts
 *.log
+
+# Environment — keep real keys off git; commit only environment.template.ts
+frontend/src/environments/environment.ts

@@ -105,6 +105,9 @@
             <textarea [(ngModel)]="message" name="message" rows="5" placeholder="What's on your mind?"
               class="field-input" required></textarea>
           </div>
+          @if (error()) {
+          <p class="form-error">⚠️ {{ error() }}</p>
+          }
           <button type="submit" class="form-btn" [disabled]="sending()">
             @if (sending()) { <span class="spinner"></span> Sending... }
             @else { Send Message 🚀 }

@@ -107,6 +107,16 @@
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+/* Inline form error */
+.form-error {
+  font-size: 0.82rem;
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.08);
+  border: 1px solid rgba(248, 113, 113, 0.25);
+  border-radius: 8px;
+  padding: 0.5rem 0.875rem;
+}
+
 /* Success state */
 .success-state {
   border-radius: 16px;
