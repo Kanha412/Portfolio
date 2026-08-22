@@ -4,33 +4,34 @@
       <stop offset="0%" stop-color="#6c63ff"/>
       <stop offset="100%" stop-color="#00d4ff"/>
     </linearGradient>
-    <!-- Glow filter -->
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2.5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
   </defs>
 
   <!-- Dark background -->
   <rect width="100" height="100" rx="22" fill="#0d0c1d"/>
-
-  <!-- Subtle gradient fill overlay -->
-  <rect x="0" y="0" width="100" height="100" rx="22" fill="url(#a)" opacity="0.07"/>
-
+  <!-- Gradient tint -->
+  <rect width="100" height="100" rx="22" fill="url(#a)" opacity="0.07"/>
   <!-- Gradient border -->
   <rect x="2" y="2" width="96" height="96" rx="20" fill="none" stroke="url(#a)" stroke-width="2.5"/>
 
-  <!-- K — drawn as paths for pixel-perfect rendering -->
-  <!-- Vertical stem -->
-  <line x1="17" y1="22" x2="17" y2="78" stroke="url(#a)" stroke-width="9" stroke-linecap="round"/>
-  <!-- Upper arm -->
-  <line x1="17" y1="50" x2="43" y2="22" stroke="url(#a)" stroke-width="8" stroke-linecap="round"/>
-  <!-- Lower arm -->
-  <line x1="17" y1="50" x2="43" y2="78" stroke="url(#a)" stroke-width="8" stroke-linecap="round"/>
+  <!-- ── K ── stem + two arms -->
+  <line x1="17" y1="22" x2="17" y2="78" stroke="url(#a)" stroke-width="9"  stroke-linecap="round"/>
+  <line x1="17" y1="50" x2="43" y2="22" stroke="url(#a)" stroke-width="8"  stroke-linecap="round"/>
+  <line x1="17" y1="50" x2="43" y2="78" stroke="url(#a)" stroke-width="8"  stroke-linecap="round"/>
 
-  <!-- G — arc + horizontal crossbar -->
-  <!-- Arc: 270° opening on the right, center (71,50) r=20 -->
-  <path d="M 91,36 A 21,21 0 1,0 91,64" fill="none" stroke="url(#a)" stroke-width="8.5" stroke-linecap="round"/>
-  <!-- Crossbar -->
-  <line x1="91" y1="50" x2="71" y2="50" stroke="url(#a)" stroke-width="8.5" stroke-linecap="round"/>
+  <!--
+    ── G ── center=(71,50) radius=19
+    315° point = (71+19·cos315°, 50+19·sin315°) = (84.4, 36.6) ≈ (84,37)
+      0° point = (71+19,       50              )               = (90, 50)
+
+    Arc from (84,37) counterclockwise long-arc to (90,50):
+    315° → 270°(top) → 180°(left) → 90°(bottom) → 45° → 0°(right) = 315° sweep
+    This leaves the opening at upper-right, clearly showing it's a G not a C.
+
+    Crossbar from (90,50) inward to (72,50) closes the right opening at mid-height.
+  -->
+  <path d="M 84,37 A 19,19 0 1,0 90,50"
+        fill="none" stroke="url(#a)" stroke-width="8.5" stroke-linecap="round"/>
+  <!-- Inward crossbar — the part that makes G ≠ C -->
+  <line x1="72" y1="50" x2="90" y2="50"
+        stroke="url(#a)" stroke-width="8.5" stroke-linecap="round"/>
 </svg>
