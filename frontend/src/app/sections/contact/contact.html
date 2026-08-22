@@ -138,12 +138,12 @@
               [class.is-invalid]="emailRef.invalid && emailRef.touched"
               [class.is-valid]="emailRef.valid && emailRef.touched"
               required
-              email />
+              pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" />
             @if (emailRef.invalid && emailRef.touched) {
               @if (emailRef.errors?.['required']) {
                 <span class="field-error">Email is required</span>
-              } @else if (emailRef.errors?.['email']) {
-                <span class="field-error">Enter a valid email address</span>
+              } @else if (emailRef.errors?.['pattern']) {
+                <span class="field-error">Enter a valid email (e.g. you@example.com)</span>
               }
             }
           </div>

@@ -63,7 +63,7 @@ export class ChatbotComponent implements AfterViewChecked {
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); this.send(); }
   }
 
-  // ── Gemini 1.5 Flash — REST API call ─────────────────────────────────────
+  // ── Gemini 3.6 Flash — REST API call ─────────────────────────────────────
   private async callGemini(userMsg: string): Promise<string> {
     const key = environment.geminiApiKey;
     if (!key || key === 'YOUR_GEMINI_API_KEY_HERE') {
@@ -74,7 +74,7 @@ export class ChatbotComponent implements AfterViewChecked {
     this.history.push({ role: 'user', parts: [{ text: userMsg }] });
 
     const endpoint =
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${key}`;
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${key}`;
 
     const body = {
       system_instruction: { parts: [{ text: buildSystemPrompt() }] },
