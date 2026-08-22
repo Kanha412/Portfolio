@@ -81,7 +81,7 @@ export class ChatbotComponent implements AfterViewChecked {
       contents: this.history,
       generationConfig: {
         temperature: 0.7,
-        maxOutputTokens: 512,
+        maxOutputTokens: 1024,
       },
     };
 

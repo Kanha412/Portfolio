@@ -112,6 +112,7 @@
 .messages {
   flex: 1;
   overflow-y: auto;
+  overscroll-behavior: contain; /* prevent scroll from leaking to the main page */
   padding: 1rem;
   display: flex;
   flex-direction: column;

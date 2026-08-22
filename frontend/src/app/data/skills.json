@@ -46,6 +46,7 @@
       { "name": "PostgreSQL", "icon": "🐘", "color": "#336791" },
       { "name": "SQL Server", "icon": "💾", "color": "#cc2927" },
       { "name": "MySQL",      "icon": "🐬", "color": "#4479a1" },
+      { "name": "Docker",      "icon": "🐳", "color": "#2496ed" },
       { "name": "Git / GitHub","icon": "🐙", "color": "#f05032" },
       { "name": "Postman",    "icon": "📮", "color": "#ff6c37" },
       { "name": "Swagger",    "icon": "📋", "color": "#85ea2d" }
