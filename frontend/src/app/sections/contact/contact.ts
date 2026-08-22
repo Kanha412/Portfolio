@@ -1,6 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import contactData from '../../data/contact.json';
 import { environment } from '../../../environments/environment';
 
@@ -12,7 +12,8 @@ import { environment } from '../../../environments/environment';
   styleUrl: './contact.scss',
 })
 export class ContactComponent {
-  // ── Social links come from contact.json ──
+  @ViewChild('contactForm') contactForm!: NgForm;
+
   readonly data = contactData;
 
   name    = '';
@@ -22,30 +23,42 @@ export class ContactComponent {
   sending = signal(false);
   error   = signal('');
 
-  async submit(): Promise<void> {
-    if (!this.name || !this.email || !this.message) return;
+  /** true when running on localhost — Formspree AJAX needs reCAPTCHA disabled in form settings */
+  readonly isLocalhost = typeof window !== 'undefined' &&
+    (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+
+  submit(): void {
+    // Touch all fields so errors appear immediately on submit attempt
+    if (this.contactForm?.invalid) {
+      this.contactForm.form.markAllAsTouched();
+      return;
+    }
+
+    if (this.isLocalhost) {
+      this.error.set(
+        'Form submissions are disabled on localhost. ' +
+        'Deploy to Vercel (or disable reCAPTCHA in Formspree → Form Settings) to test.'
+      );
+      return;
+    }
+
     this.sending.set(true);
     this.error.set('');
 
-    try {
-      const res = await fetch(environment.formspreeUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ name: this.name, email: this.email, message: this.message }),
-      });
-
-      if (res.ok) {
+    fetch(environment.formspreeUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ name: this.name, email: this.email, message: this.message }),
+    })
+      .then(res => res.ok ? res : res.json().then(j => Promise.reject(j)))
+      .then(() => {
         this.sent.set(true);
         this.name = this.email = this.message = '';
-      } else {
-        const json = await res.json().catch(() => ({}));
-        this.error.set((json as { error?: string }).error ?? 'Submission failed. Please try again.');
-      }
-    } catch {
-      this.error.set('Network error. Please check your connection and try again.');
-    } finally {
-      this.sending.set(false);
-    }
+      })
+      .catch((err: { error?: string }) => {
+        this.error.set(err?.error ?? 'Submission failed. Please try again.');
+      })
+      .finally(() => this.sending.set(false));
   }
 
   reset(): void { this.sent.set(false); this.error.set(''); }

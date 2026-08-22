@@ -12,7 +12,7 @@
 
     <div class="contact-grid mt-16">
 
-      <!-- Left: Socials — from contact.json socials array -->
+      <!-- Left: Socials -->
       <div data-aos="fade-right" data-aos-delay="100">
         <h3 class="col-heading">Find me on</h3>
 
@@ -46,7 +46,7 @@
               </svg>
               }
               @case ('gfg') {
-              <!-- GeeksForGeeks: two mirrored G shapes (ɔG) -->
+              <!-- GeeksForGeeks -->
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0,0,46.5,46.5" fill="#2F8D46">
                 <path
                   d="M29.035,24c-0.021,-0.329 -0.035,-0.661 -0.035,-1c0,-6.08 2.86,-10 7,-10c3.411,0 6.33,2.662 7,7h2l0.001,-9h-2.001c0,0 -0.533,1.506 -1,1.16c-1.899,-1.066 -3.723,-1.132 -6.024,-1.132c-5.8,0 -10.976,5.232 -10.976,11.892c0,0.364 0.021,0.723 0.049,1.08h-2.099c0.029,-0.357 0.05,-0.716 0.05,-1.08c0,-6.66 -5.176,-11.892 -10.976,-11.892c-2.301,0 -4.125,0.065 -6.024,1.132c-0.467,0.346 -1,-1.16 -1,-1.16h-2.001l0.001,9h2c0.67,-4.338 3.589,-7 7,-7c4.14,0 7,3.92 7,10c0,0.339 -0.014,0.671 -0.035,1h-18.965v2h1.009c1.083,0 1.977,0.861 1.999,1.943c0.038,1.846 0.216,4.063 0.992,5.057c1.269,1.625 3,3 8,3c5.022,0 9.92,-4.527 11,-10h2c1.08,5.473 5.978,10 11,10c5,0 6.731,-1.375 8,-3c0.776,-0.994 0.954,-3.211 0.992,-5.057c0.022,-1.082 0.917,-1.943 1.999,-1.943h1.009v-2zM11.477,33.73c-1.605,0 -4.155,-0.006 -4.477,-1.73c-0.109,-0.583 -0.091,-2.527 -0.057,-4.046c0.025,-1.087 0.912,-1.954 2,-1.954h10.057c-0.794,4.781 -3.985,7.73 -7.523,7.73zM41,32c-0.322,1.724 -2.872,1.73 -4.477,1.73c-3.537,0 -6.729,-2.949 -7.523,-7.73h10.057c1.088,0 1.975,0.867 2,1.954c0.034,1.519 0.052,3.463 -0.057,4.046z">
@@ -58,7 +58,6 @@
               <svg fill="#3ba54d" viewBox="0 0 32 32" class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" stroke="#3ba54d"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M 15.998047 3 C 14.225047 3 5.5352031 7.9839062 4.6582031 9.5039062 C 3.7802031 11.024906 3.7802031 20.983047 4.6582031 22.498047 C 5.5392031 24.017047 14.229047 29 15.998047 29 C 17.762047 29 26.451938 24.019953 27.335938 22.501953 C 28.222938 20.979953 28.222938 11.014047 27.335938 9.4980469 L 27.335938 9.4960938 C 26.444937 7.9790937 17.756047 3 15.998047 3 z M 15.996094 5.0117188 C 17.693094 5.3647187 24.417703 9.2167656 25.595703 10.509766 C 26.135703 12.150766 26.134703 19.844281 25.595703 21.488281 C 24.425703 22.779281 17.695094 26.636281 15.996094 26.988281 C 14.298094 26.638281 7.5723906 22.783234 6.4003906 21.490234 C 5.8653906 19.842234 5.8653906 12.155766 6.4003906 10.509766 C 7.5693906 9.2167656 14.297094 5.3617187 15.996094 5.0117188 z M 13 9 L 11 11 L 12 11 L 12 21 L 14 21 L 14 17 L 18 17 L 18 21 L 17 21 L 19 23 L 21 21 L 20 21 L 20 12 L 18 12 L 18 15 L 14 15 L 14 11 L 15 11 L 13 9 z"></path></g></svg>
               }
               @default {
-              <!-- Generic external link icon for any future social -->
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="w-5 h-5">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -90,28 +89,99 @@
           <button (click)="reset()" class="form-btn mt-4" style="max-width: 160px">Send Another</button>
         </div>
         } @else {
-        <form (ngSubmit)="submit()" class="contact-form">
+
+        <!-- Dev-mode notice (only on localhost) -->
+        @if (isLocalhost) {
+        <div class="dev-notice">
+          🛠 <strong>Dev mode</strong> — Form submission is disabled on localhost.
+          Go to <a href="https://formspree.io" target="_blank">Formspree</a> → your form →
+          <strong>Settings → reCAPTCHA → Disable</strong> to enable AJAX here.
+        </div>
+        }
+
+        <form #contactForm="ngForm" (ngSubmit)="submit()" class="contact-form" novalidate>
+
+          <!-- Name -->
           <div class="field-group">
-            <label class="field-label">Name</label>
-            <input [(ngModel)]="name" name="name" type="text" placeholder="Your Name" class="field-input" required />
+            <label class="field-label">Name <span class="req">*</span></label>
+            <input
+              [(ngModel)]="name"
+              name="name"
+              #nameRef="ngModel"
+              type="text"
+              placeholder="Your name"
+              class="field-input"
+              [class.is-invalid]="nameRef.invalid && nameRef.touched"
+              [class.is-valid]="nameRef.valid && nameRef.touched"
+              required
+              minlength="2"
+              maxlength="80" />
+            @if (nameRef.invalid && nameRef.touched) {
+              @if (nameRef.errors?.['required']) {
+                <span class="field-error">Name is required</span>
+              } @else if (nameRef.errors?.['minlength']) {
+                <span class="field-error">Name must be at least 2 characters</span>
+              }
+            }
           </div>
+
+          <!-- Email -->
           <div class="field-group">
-            <label class="field-label">Email</label>
-            <input [(ngModel)]="email" name="email" type="email" placeholder="you@example.com" class="field-input"
-              required />
+            <label class="field-label">Email <span class="req">*</span></label>
+            <input
+              [(ngModel)]="email"
+              name="email"
+              #emailRef="ngModel"
+              type="email"
+              placeholder="you@example.com"
+              class="field-input"
+              [class.is-invalid]="emailRef.invalid && emailRef.touched"
+              [class.is-valid]="emailRef.valid && emailRef.touched"
+              required
+              email />
+            @if (emailRef.invalid && emailRef.touched) {
+              @if (emailRef.errors?.['required']) {
+                <span class="field-error">Email is required</span>
+              } @else if (emailRef.errors?.['email']) {
+                <span class="field-error">Enter a valid email address</span>
+              }
+            }
           </div>
+
+          <!-- Message -->
           <div class="field-group">
-            <label class="field-label">Message</label>
-            <textarea [(ngModel)]="message" name="message" rows="5" placeholder="What's on your mind?"
-              class="field-input" required></textarea>
+            <label class="field-label">Message <span class="req">*</span></label>
+            <textarea
+              [(ngModel)]="message"
+              name="message"
+              #msgRef="ngModel"
+              rows="5"
+              placeholder="What's on your mind?"
+              class="field-input"
+              [class.is-invalid]="msgRef.invalid && msgRef.touched"
+              [class.is-valid]="msgRef.valid && msgRef.touched"
+              required
+              minlength="10"
+              maxlength="2000"></textarea>
+            @if (msgRef.invalid && msgRef.touched) {
+              @if (msgRef.errors?.['required']) {
+                <span class="field-error">Message is required</span>
+              } @else if (msgRef.errors?.['minlength']) {
+                <span class="field-error">Message must be at least 10 characters</span>
+              }
+            }
+            <span class="char-count">{{ message.length }} / 2000</span>
           </div>
+
           @if (error()) {
           <p class="form-error">⚠️ {{ error() }}</p>
           }
+
           <button type="submit" class="form-btn" [disabled]="sending()">
             @if (sending()) { <span class="spinner"></span> Sending... }
             @else { Send Message 🚀 }
           </button>
+
         </form>
         }
       </div>
